@@ -1,0 +1,182 @@
+#wrap {
+    width: 100%;
+}
+.content {
+    display: flex;
+    margin-top: 50px ;
+    margin-left: 50px;
+}
+
+.content .staffList {
+    width: 35%;
+}
+.content .staffList h2 {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+    margin: 0px 0px 30px;
+}
+
+.content .btnWrap {
+    display: flex; 
+    justify-content: right;
+    margin-bottom: 30px;
+}
+
+.content .btn {
+    border: none;
+    border-radius: 15px;
+    background: #bbcaff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.content .staffList .btnDel {
+    margin-right: 20px;
+}
+
+
+
+.content .staffList .con .list {
+    padding: 0;
+}
+
+.content .staffList .con .list li {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 15px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 5px #bbcaff;
+}
+
+
+
+.content .staffList .con .list li .pic,
+.side .imgEx .imgList li .imgbox {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.content .staffList .con .list li .pic img,
+.side .imgEx .imgList li .imgbox img {
+    width: 100%;
+}
+
+.content .staffList .con .list li .txt {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content .staffList .con .list li .txt strong,
+.content .con .list li .txt span {
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+
+
+.content .staffList .con .list li .txt strong {
+    font-weight: 700;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.content .staffList .con .list li i {
+    display: block;
+    font-size: 30px;
+    color: red;
+    text-align: center;
+}
+
+/* step5부터 적용 */
+
+.content .staffList .con .resignBtn {
+    border: none;
+    border-radius: 10px;
+    background: #666;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.content .staffList .con .likeWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.content .side {
+    width: 50%;
+    margin-left: 50px;
+}
+
+.content .side .addshowBtn {
+    margin-bottom: 30px;
+    margin-top: 86px;
+}
+
+.content form,
+.content .imgEx {
+    box-shadow: 0px 0px 5px #bbcaff;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.content form p {
+    margin-bottom: 15px;
+}
+
+.content form p label {
+    width: 15%;
+    display: inline-block;
+    text-align: left;
+    font-size: 18px;
+}
+
+.content form p input {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    width: 75%;
+    font-size: 16px;
+}
+
+.content form p input::placeholder {
+    font-size: 16px;
+}
+
+.content form .addBtn {
+    background: #ff7b7b;
+    margin-top: 20px;
+}
+
+.content .imgEx h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.side .imgEx .imgList li .imgbox {
+    width: 60px;
+    height: 60px
+}
+
+.content .side .imgEx .imgList li {
+    display: flex;
+    padding: 10px 0px;
+    border-bottom: 1px solid #bbcaff;
+    text-align: left;
+}
+
+.content .side .imgEx .imgList li p {
+    width: 540px;
+    margin-left: 30px;
+    font-size: 15px;
+    margin-top: 15px;
+}
