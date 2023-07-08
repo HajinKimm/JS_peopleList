@@ -1,7 +1,10 @@
 import React from 'react';
-
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { useDispatch } from 'react-redux';
+import { heartSelect, removeStaff } from '../store/modules/staffSlice';
 const StaffItem = ({item}) => {
     const {id, name, job, tel, imgUrl, islike} = item
+    const dispatch = useDispatch()
     return (
         <li>
             <div className="pic">
@@ -13,8 +16,8 @@ const StaffItem = ({item}) => {
                 <span>{tel}</span>
             </div>
             <div className="likeWrap">
-                <i onClick={()=>onHeart(id)}>{islike?<AiFillHeart/>:<AiOutlineHeart/>}</i>
-                <button className='resignBtn' onClick={()=>onDel(id)}>퇴사</button>
+                <i onClick={()=>dispatch(heartSelect(id))}>{islike?<AiFillHeart/>:<AiOutlineHeart/>} </i>
+                <button className='resignBtn' onClick={()=>dispatch(removeStaff(id))}>퇴사</button>
             </div>
         </li>
     );

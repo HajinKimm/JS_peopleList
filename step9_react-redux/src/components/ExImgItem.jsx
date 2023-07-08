@@ -6,7 +6,7 @@ const ExImgItem = ({item}) => {
     return (
         <li>
             <div className="imgbox">
-                <img src={imgurl} alt={id}사진 />
+                <img src={imgurl} alt={id} />
             </div> 
             <p>{imgurl}</p>
         </li>

@@ -1,12 +1,15 @@
 import React from 'react';
 import { HeaderWrap } from '../styled/styledStaff';
 import NavBar from './NavBar';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <HeaderWrap>
-            <h1>직원 명단 관리</h1>
-            <NavBar/>
+            <div className="inner">
+                <h1><Link to={'/'}>직원 명단 관리</Link></h1>
+                <NavBar/>
+            </div>
         </HeaderWrap>
     );
 };
