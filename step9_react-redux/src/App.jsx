@@ -6,6 +6,7 @@ import GlobalStyle from './styled/Global';
 import StaffForm from './pages/staffForm';
 import Login from './pages/Login';
 import Logout from './pages/Logout';
+import Warning from './pages/Warning';
 const App = () => {
   return (
     <>
@@ -17,6 +18,7 @@ const App = () => {
             <Route path='/addStaff' element={<StaffForm/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/logout' element={<Logout/>}/>
+            <Route path='/warning' element={<Warning/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

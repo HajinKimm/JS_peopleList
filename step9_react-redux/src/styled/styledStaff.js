@@ -112,7 +112,6 @@ export const SttafList = styled.div`
     .inner{
         ${inner}
         padding: 70px 0px;
-        /* width: 900px; */
         h2{
             ${h2}
         }
@@ -123,6 +122,7 @@ export const SttafList = styled.div`
             right: 0;
             .btn {
                 ${btnAll}
+                a{color:#fff;}
                 &:nth-child(2n){
                     margin-left: 30px;
                 }
@@ -202,7 +202,6 @@ export const AddForm = styled.div`
     .inner{
         ${inner}
         padding: 70px 0px;
-        /* width: 900px; */
         h2{
             ${h2}
         }
@@ -357,3 +356,35 @@ export const LoginWrap = styled.div`
         }
 }
 `
+
+export const WarningWrap = styled.div`
+    .inner{
+        ${inner}
+        padding:100px 0px;
+        div{
+            ${formbd}
+            h2{
+                ${h2}
+                
+            }
+            strong{
+                font-size: 30px;
+                font-weight: 600;
+                margin:30px 0px 70px;
+                display: block;
+            }
+            p{
+                button{
+                    ${btnAll}
+                    a{color:#fff;}
+                    &:nth-child(2n){
+                        margin-left: 30px;
+                    }
+                    &:hover{
+                        background: ${FontColor};
+                    }
+                }
+            }
+        }
+    }
+    `

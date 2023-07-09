@@ -7,8 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const Logout = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const {staffthority} = useSelector(state=>state.authority)
-    console.log(staffthority)
+    const {staffathority} = useSelector(state=>state.authority)
     return (
         <LoginWrap>
         <div className="inner">
@@ -16,10 +15,10 @@ const Logout = () => {
             <div className='form'>
             <div className='formWrap'>
                 <p className='loginInfo'>로그아웃 하시겠습니까?</p>
-                <span>이메일 : </span>
+                <span>이메일 : {staffathority.email}</span>
             </div>
                 <p className='btnWrap'>
-                    <button onClick={()=>{ dispatch(logout())}} className='btn'>예</button>
+                    <button onClick={()=>{navigate('/login'), dispatch(logout())}} className='btn'>예</button>
                     <button onClick={()=>navigate('/')} className='btn'>아니요</button>
                 </p>
             </div>

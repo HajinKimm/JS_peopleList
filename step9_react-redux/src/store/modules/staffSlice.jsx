@@ -24,6 +24,7 @@ const staffSlice = createSlice({
             localStorage.setItem('staffData', JSON.stringify(state))
         },
         heartSelect(state,action){
+            console.log(state.data)
             state.data = state.data.map(item=>item.id===action.payload?{...item, islike:!item.islike}:item)
             localStorage.setItem('staffData', JSON.stringify(state))
         },
