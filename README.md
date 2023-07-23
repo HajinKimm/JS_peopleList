@@ -1,30 +1,43 @@
 # 직원 명단 리스트 
+직원의 이름, 직책, 사진 등의 간단 정보입력하여 명단 추가 기능 구현
+직원 좋아요 표시, 직원삭제 기능 구현
+localStorage를 이용한 로그인기능 구현
+
+---
+- Version1. Javascript + css : https://hajinkimm.github.io/peopleList/step7
+- Version2. React + sass : https://hajinkimm.github.io/peopleList/step8_react/dist/
+- Version3. React_Redux : https://hajinkimm.github.io/peopleList/step9_react-redux/dist/
+---
+
 ## # 목차
-1. __Step1__ 
-
-   - vanilla script로 code작성 
-   - index.html에 css, script 모두 작성한 기본 유형
-2. __Step2 (module)__ 
-
-   - style.css파일에 css코드 분리
-   - app.js파일에 javascript코드 분리
-   - module폴더에 app.js내용 중 직원 명단 데이터 배열 data.js에 분리
-3. __Step3 (module)__
-
-    -  module폴더에 app.js내용 중 ul생성 함수코드 showtxt.js에 분리
-4. __Step4 (module)__
-
-   - module폴더에 app.js내용 중 하트색상 변경 코드 heart.js에 분리
-5. __Step5 (html변경 및 기능추가)__ 
-
-   - 직원 명단을 추가할 수 있는 버튼과 기능 구현
-   - localStorage 를 이용하여 데이터 저장 및 유지 가능
-6. __Step6 (class함수)__ 
-
-   - Step5의 vanilla script로 작성된 code를 class함수로 변경
-7. __Step7 (module)__
-
-   - Step6파일 module
+1. Version1 : Javascript + css
+   1. __Step1__ 
+      - vanilla script로 code작성 
+      - index.html에 css, script 모두 작성한 기본 유형
+   2. __Step2 (module)__ 
+      - style.css파일에 css코드 분리
+      - app.js파일에 javascript코드 분리
+      - module폴더에 app.js내용 중 직원 명단 데이터 배열 data.js에 분리
+   3. __Step3 (module)__
+       -  module폴더에 app.js내용 중 ul생성 함수코드 showtxt.js에 분리
+   4. __Step4 (module)__
+      - module폴더에 app.js내용 중 하트색상 변경 코드 heart.js에 분리
+   5. __Step5 (html변경 및 기능추가)__ 
+      - 직원 명단을 추가할 수 있는 버튼과 기능 구현
+      - localStorage 를 이용하여 데이터 저장 및 유지 가능
+   6. __Step6 (class함수)__ 
+      - Step5의 vanilla script로 작성된 code를 class함수로 변경
+   7. __Step7 (module)__
+      - Step6파일 module
+2. Version2 : React + sass
+   1. __Step8__
+      - Step7을 React + sass로 리팩토링
+3. Version3 : React + sass
+   1.  __Step9__
+       - Step8을 React Redux로 리팩도링
+       - Layout 구조 사용
+       - localStorage를 이용한 로그인기능 구현
+       - 로그인 후에만 도서 추가, 수정 삭제 가능
 ---
 # 1. Step1
 ## 1.1 파일
@@ -65,7 +78,7 @@
         conbox.append(listUl);
     }
     ```
-2. [명단삭제 버튼] 생성되어 있는 ul태그를 제거하여 직원 명단 리스트가 전부 삭제 가능
+1. [명단삭제 버튼] 생성되어 있는 ul태그를 제거하여 직원 명단 리스트가 전부 삭제 가능
     ```javascript
     btnDel.addEventListener('click',e=>{
         let listUl = document.querySelector('.list')
@@ -75,7 +88,7 @@
         isshow = false;
     })
     ```
-3. [명단보기 버튼] ul태그가 재생성되어 직원 명단 리스트가 전부 복구 가능
+2. [명단보기 버튼] ul태그가 재생성되어 직원 명단 리스트가 전부 복구 가능
     ```javascript
     btnShow.addEventListener('click',e=>{
         if(isshow === false){
@@ -85,7 +98,7 @@
         }
     })
     ```
-4. [하트] 하트색이 채워지게 변경하여 직원 구분 가능
+3. [하트] 하트색이 채워지게 변경하여 직원 구분 가능
     ```javascript
     function heart(){
         const heartCol = document.querySelectorAll('.list li i');
@@ -399,4 +412,37 @@
     }
 
     export {StaffUI, LocalData}
+    ```
+
+# 8. Step8
+## 8.1 파일
+- 파일구조
+<img src='./step8_react/md_images/tree.png'>
+
+
+# 9. Step9
+## 9.1 파일
+- 파일 구조
+<img src='./step9_react-redux/md_images/tree.png'>
+
+- 결과물
+<img src='./step9_react-redux/md_images/output.gif'>
+
+## 9.2 변경 code
+- 비밀번호는 임의로 1234로 지정하였으며 1234를 입력했을 경우에만 로그인 가능 및 id만 localStorage에 저장<br>(로그아웃 시 localStorage에서 id 삭제)
+    ```javascript
+    login(state, action){
+        const {email, password} = action.payload
+        const userLog = {
+            email
+        }
+        if(password === '1234'){
+            state.staffathority = {email, password}
+            localStorage.setItem('userLog', JSON.stringify(userLog))
+        }
+    },
+    logout(state, action){
+        state.staffathority = null
+        localStorage.removeItem('userLog')
+    }
     ```
