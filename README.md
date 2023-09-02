@@ -4,9 +4,9 @@
 localStorage를 이용한 로그인기능 구현
 
 ---
-- Version1. Javascript + css : https://hajinkimm.github.io/peopleList/step7
-- Version2. React + sass : https://hajinkimm.github.io/peopleList/step8_react/dist/
-- Version3. React_Redux : https://hajinkimm.github.io/peopleList/step9_react-redux/dist/
+- Version1. Javascript + css : https://hajinkimm.github.io/JS_peopleList/step7
+- Version2. React + sass : https://hajinkimm.github.io/JS_peopleList/step8_react/dist/
+- Version3. React_Redux : https://hajinkimm.github.io/JS_peopleList/step9_react-redux/dist/
 ---
 - 최종 결과물
 <img src='./step9_react-redux/md_images/output.gif'>
